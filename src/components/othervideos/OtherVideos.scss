@@ -8,8 +8,23 @@
   font-family: 400;
 }
 
+.othervideos__card {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
 .othervideos__image {
-  width: 12rem;
+  margin-right: 5%;
+  min-width: 12rem;
+  max-width: 12rem;
   height: 8rem;
   border-radius: 0.5rem;
+}
+
+.othervideos__header {
+  font-family: Avenir;
+  font-weight: 400;
+  margin-left: 1rem;
 }
