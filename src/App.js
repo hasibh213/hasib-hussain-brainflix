@@ -15,9 +15,12 @@ class App extends React.Component {
     specificVideo: videodetails[0],
   };
 
-  render() {
-    // let VideoDetails = this.VideoDetails.find(() =>)
+  handleChange = (id) => {
+    let selectedVideo = this.state.allVideoDetails.find((v) => v.id === id);
+    this.setState({ specificVideo: selectedVideo });
+  };
 
+  render() {
     return (
       <div className="app">
         <Header></Header>
@@ -40,6 +43,7 @@ class App extends React.Component {
           videos={this.state.allVideos}
           videodetails={this.state.specificVideo}
           specificVideo={this.state.specificVideo}
+          onVideoClick={this.handleChange}
         />
       </div>
     );

@@ -1,6 +1,29 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  position: relative;
+}
+
 .hero__image {
-  height: 500px;
-  width: 500px;
+  width: 100%;
+
+  @include tablet {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  @include desktop {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+.hero__image-container {
+  background-color: black;
 }
 
 .hero__play-video-icon,
@@ -10,4 +33,19 @@
   height: 50px;
   width: 50px;
   background-color: black;
+}
+
+.hero__time {
+  color: white;
+  font-family: Avenir;
+  font-weight: 400;
+}
+
+.hero__icons {
+  width: 80%;
+  position: absolute;
+  display: flex;
+  bottom: 5%;
+  left: 15%;
+  justify-content: space-evenly;
 }

@@ -3,11 +3,16 @@ import "./OtherVideos.scss";
 function OtherVideos(props) {
   return (
     <>
-      {props.videos.map((otherVideo) => {
-        return (
-          <div className="othervideos" key={otherVideo.id}>
+      Next Videos
+      {props.videos
+        .filter((v) => v.id != props.specificVideo.id)
+        .map((otherVideo) => (
+          <div
+            className="othervideos"
+            key={otherVideo.id}
+            onClick={() => props.onVideoClick(otherVideo.id)}
+          >
             <div className="othervideos__header">
-              Next Videos
               <article className="othervideos__card">
                 <img
                   className="othervideos__image"
@@ -21,8 +26,7 @@ function OtherVideos(props) {
               </article>
             </div>
           </div>
-        );
-      })}
+        ))}
     </>
   );
 }

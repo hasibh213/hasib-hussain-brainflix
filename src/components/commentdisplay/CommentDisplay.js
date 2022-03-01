@@ -36,16 +36,11 @@ function CommentDisplay(props) {
         <div>
           {comments.map((comment) => {
             return (
-              <article key={comment.id}>
-                <div>Grey background icon</div>
+              <article className="comments__card" key={comment.id}>
+                <div>Grey icon</div>
                 <div>
                   <div>
-                    <h3>
-                      {comment.name}
-                      {
-                        //dunno what to put//
-                      }
-                    </h3>
+                    <h3>{comment.name}</h3>
                     <p>{comment.timestamp}</p>
                   </div>
                   <p>{comment.comment}</p>

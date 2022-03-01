@@ -1,3 +1,22 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/variables" as *;
+
+.comments {
+  font-family: Avenir;
+  font-family: 400;
+}
+
 .comments__avatarimage {
   width: 5rem;
+
+  @include tablet {
+    width: 30rem;
+  }
+}
+
+.comments__card {
+  border-top: solid 2px #e1e1e1;
+  display: flex;
 }
