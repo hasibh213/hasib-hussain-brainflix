@@ -1,0 +1,16 @@
+@use "../../../styles/partials/breakpoints" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/colours" as *;
+@use "../../../styles/partials/variables" as *;
+
+.display {
+  font-family: Avenir;
+  font-family: 400;
+}
+
+.display__likes-icon,
+.display__views-icon {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+}

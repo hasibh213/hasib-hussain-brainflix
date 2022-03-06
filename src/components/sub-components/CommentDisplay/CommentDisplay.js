@@ -1,7 +1,7 @@
 import React from "react";
 import "./CommentDisplay.scss";
-import addcomment from "../../assets/Icons/add_comment.svg";
-import avatarImage from "../../assets/Images/Mohan-muruge.jpg";
+import addcomment from "../../../assets/Icons/add_comment.svg";
+import avatarImage from "../../../assets/Images/Mohan-muruge.jpg";
 
 function CommentDisplay(props) {
   let comments = props.videodetails.comments;
@@ -28,7 +28,12 @@ function CommentDisplay(props) {
               </label>
             </div>
             <button className="comments__button" type="submit">
-              <input className="comments__icon" type="image" src={addcomment} />
+              <input
+                className="comments__icon"
+                alt="comments icon"
+                type="image"
+                src={addcomment}
+              />
               <p className="comments__word">COMMENT</p>
             </button>
           </div>

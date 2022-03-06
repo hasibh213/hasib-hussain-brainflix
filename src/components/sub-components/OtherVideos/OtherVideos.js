@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./OtherVideos.scss";
 
 function OtherVideos(props) {
@@ -8,10 +9,10 @@ function OtherVideos(props) {
         {props.videos
           .filter((v) => v.id != props.specificVideo.id)
           .map((otherVideo) => (
-            <div
+            <Link
               className="othervideos"
               key={otherVideo.id}
-              onClick={() => props.onVideoClick(otherVideo.id)}
+              to={`/videos/${otherVideo.id}`}
             >
               <div className="othervideos__header">
                 <article className="othervideos__card">
@@ -26,7 +27,7 @@ function OtherVideos(props) {
                   </div>
                 </article>
               </div>
-            </div>
+            </Link>
           ))}
       </div>
     </>

@@ -1,53 +1,21 @@
 import React from "react";
-import videodetails from "./data/video-details.json";
-import videos from "./data/videos.json";
 import "./App.scss";
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
-import VideoDetails from "./components/videodetails/VideoDetails";
-import OtherVideos from "./components/othervideos/OtherVideos";
-import CommentDisplay from "./components/commentdisplay/CommentDisplay";
+import { Redirect, Route, Switch } from "react-router-dom";
+import Homepage from "./components/pages/HomePage/HomePage";
+import UploadPage from "./components/pages/VideoUpload/VideoUpload";
 
-class App extends React.Component {
-  state = {
-    allVideos: videos,
-    allVideoDetails: videodetails,
-    specificVideo: videodetails[0],
-  };
-
-  handleChange = (id) => {
-    let selectedVideo = this.state.allVideoDetails.find((v) => v.id === id);
-    this.setState({ specificVideo: selectedVideo });
-  };
-
-  render() {
-    return (
-      <div className="app">
-        <Header></Header>
-        <Hero
-          videos={this.state.allVideos}
-          videodetails={this.state.specificVideo}
-          specificVideo={this.state.specificVideo}
+export default function App() {
+  return (
+    <div className="app">
+      <Switch>
+        <Redirect from="/HomePage" to="/" />
+        <Route exact path="/" component={Homepage}></Route>
+        <Route path="/upload-page" component={UploadPage} />
+        <Route
+          path="/videos/:id"
+          render={(routerProps) => <Homepage {...routerProps} />}
         />
-        <VideoDetails
-          videos={this.state.allVideos}
-          videodetails={this.state.specificVideo}
-          specificVideo={this.state.specificVideo}
-        />
-        <CommentDisplay
-          videos={this.state.allVideos}
-          videodetails={this.state.specificVideo}
-          specificVideo={this.state.specificVideo}
-        />
-        <OtherVideos
-          videos={this.state.allVideos}
-          videodetails={this.state.specificVideo}
-          specificVideo={this.state.specificVideo}
-          onVideoClick={this.handleChange}
-        />
-      </div>
-    );
-  }
+      </Switch>
+    </div>
+  );
 }
-
-export default App;

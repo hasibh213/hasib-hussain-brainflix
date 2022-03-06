@@ -1,7 +1,7 @@
 import React from "react";
 import "./VideoDetails.scss";
-import likes from "../../assets/Icons/likes.svg";
-import views from "../../assets/Icons/views.svg";
+import likes from "../../../assets/Icons/likes.svg";
+import views from "../../../assets/Icons/views.svg";
 
 function VideoDetails(props) {
   return (

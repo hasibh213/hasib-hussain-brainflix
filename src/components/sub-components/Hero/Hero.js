@@ -1,9 +1,9 @@
 import React from "react";
 import "./Hero.scss";
-import playbutton from "../../assets/Icons/play.svg";
-import scrubicon from "../../assets/Icons/scrub.svg";
-import fullscreen from "../../assets/Icons/fullscreen.svg";
-import volume from "../../assets/Icons/volume_up.svg";
+import playbutton from "../../../assets/Icons/play.svg";
+import scrubicon from "../../../assets/Icons/scrub.svg";
+import fullscreen from "../../../assets/Icons/fullscreen.svg";
+import volume from "../../../assets/Icons/volume_up.svg";
 
 function Hero(props) {
   return (
