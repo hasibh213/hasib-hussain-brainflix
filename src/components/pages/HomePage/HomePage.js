@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-
 import Header from "../../sub-components/Header/Header";
 import Hero from "../../sub-components/Hero/Hero";
 import VideoDetails from "../../sub-components/VideoDetails/VideoDetails";
@@ -19,12 +18,10 @@ class Homepage extends React.Component {
 
   componentDidMount() {
     this.loadAllVideos();
-    console.log(this.state);
   }
 
   loadAllVideos = () => {
     axios.get(api + "videos/" + herokoKey).then((response) => {
-      console.log(response.data);
       this.setState({ allVideos: response.data });
       this.setChosenVideoById(response.data[0].id);
     });
@@ -33,7 +30,6 @@ class Homepage extends React.Component {
   setChosenVideoById = (videoId) => {
     axios.get(api + "videos/" + videoId + herokoKey).then((response) => {
       this.setState({ loading: true });
-      console.log(response.data);
       this.setState({ chosenVideo: response.data, loading: false });
     });
   };

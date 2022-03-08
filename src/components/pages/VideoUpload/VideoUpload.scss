@@ -1,0 +1,75 @@
+@use "../../../styles/partials/breakpoints" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/colours" as *;
+@use "../../../styles/partials/variables" as *;
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  font-family: Avenir;
+}
+
+.upload__section {
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.upload__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.upload__label {
+  width: 100%;
+}
+
+.upload__video-thumbnail {
+  width: 80%;
+}
+
+h1 {
+  margin-left: 5%;
+}
+
+h3 {
+  margin-left: 10%;
+}
+
+.upload__thumbnail {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.upload__text-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.upload__bar {
+  width: 90%;
+  height: 2rem;
+  margin-right: 10%;
+  background-color: #fafafa;
+  border: #afafaf;
+  font-family: Avenir;
+}
+
+.upload__search-bar {
+  width: 90%;
+  height: 12rem;
+  margin-right: 10%;
+  background-color: #fafafa;
+  border: #afafaf;
+  font-family: Avenir;
+}
+
+.upload__button-1 {
+  color: #0095ff;
+  background-color: white;
+}
