@@ -6,8 +6,9 @@ import VideoDetails from "../../sub-components/VideoDetails/VideoDetails";
 import OtherVideos from "../../sub-components/OtherVideos/OtherVideos";
 import CommentDisplay from "../../sub-components/CommentDisplay/CommentDisplay";
 
-let api = "https://project-2-api.herokuapp.com/";
-let herokoKey = "?api_key=7068ed1b-681d-4f7f-9d65-f55391e29db7";
+// let api = "https://project-2-api.herokuapp.com/";
+// let herokoKey = "?api_key=7068ed1b-681d-4f7f-9d65-f55391e29db7";
+let localhost = "http://localhost:8000/";
 
 class Homepage extends React.Component {
   state = {
@@ -21,14 +22,14 @@ class Homepage extends React.Component {
   }
 
   loadAllVideos = () => {
-    axios.get(api + "videos/" + herokoKey).then((response) => {
+    axios.get(localhost + "videos/").then((response) => {
       this.setState({ allVideos: response.data });
       this.setChosenVideoById(response.data[0].id);
     });
   };
 
   setChosenVideoById = (videoId) => {
-    axios.get(api + "videos/" + videoId + herokoKey).then((response) => {
+    axios.get(localhost + "videos/" + videoId).then((response) => {
       this.setState({ loading: true });
       this.setState({ chosenVideo: response.data, loading: false });
     });
